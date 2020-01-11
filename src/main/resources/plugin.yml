@@ -1,0 +1,20 @@
+name: TournamentOfPower
+version: ${project.version}
+main: com.bytehawks.tournament.tournamentofpower.TournamentOfPower
+api-version: 1.13
+load: POSTWORLD
+prefix: Tournament Of Power
+authors: [Bytehawks]
+
+commands:
+  tournamentofpower:
+    description: Turnier der Kraft Befehl
+    usage: /tournamentofpower start
+    permission: tournamentofpower.start
+    permission-message: Du hast nicht die Berechtigung.
+
+permissions:
+  tournamentofpower.start:
+    description: Erlaubt Dir das Turnier zu starten.
+    default: op
+
