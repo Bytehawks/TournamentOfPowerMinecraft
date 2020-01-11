@@ -22,7 +22,6 @@ public class PlayerSpawnListener implements Listener {
         Player player = event.getPlayer();
         List<String> deadPlayers = plugin.getConfig().getStringList("isDead");
 
-        System.out.println(deadPlayers.size());
         if (deadPlayers.contains(player.getUniqueId().toString())) {
             player.setGameMode(GameMode.SPECTATOR);
         }

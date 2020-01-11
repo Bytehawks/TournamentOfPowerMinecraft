@@ -64,6 +64,7 @@ public class RemoveBlockService {
 
 
     public void removeNorthBlocks() {
+        plugin.getLogger().info("northBlocks");
         setLocationstoRemove();
         //Norden
         x = lowestNorthWestBlock1.getX();
@@ -73,7 +74,7 @@ public class RemoveBlockService {
             while (y < worldHeight) {
                 Location location = new Location(plugin.getWorld(), (int) x, (int) y, (int) z);
                 if (!location.getBlock().getType().equals(Material.AIR)) {
-                    location.getBlock().setType(replaceBlock);
+                    location.getBlock().setType(replaceBlock, false);
                     locationList.add(location);
                 }
                 y++;
@@ -84,6 +85,8 @@ public class RemoveBlockService {
     }
 
     public void removeWestBlocks() {
+        plugin.getLogger().info("westBlocks");
+        setLocationstoRemove();
         //Osten
         x = lowestNorthEastBlock.getX();
         z = lowestNorthEastBlock.getZ();
@@ -92,7 +95,7 @@ public class RemoveBlockService {
             while (y < worldHeight) {
                 Location location = new Location(plugin.getWorld(), (int) x, (int) y, (int) z);
                 if (!location.getBlock().getType().equals(Material.AIR)) {
-                    location.getBlock().setType(replaceBlock);
+                    location.getBlock().setType(replaceBlock, false);
                     locationList.add(location);
                 }
                 y++;
@@ -103,6 +106,8 @@ public class RemoveBlockService {
     }
 
     public void removeSouthBlocks() {
+        plugin.getLogger().info("southBlocks");
+        setLocationstoRemove();
         //Sued
         x = lowestSouthWestBlock.getX();
         z = lowestSouthWestBlock.getZ();
@@ -111,7 +116,7 @@ public class RemoveBlockService {
             while (y < worldHeight) {
                 Location location = new Location(plugin.getWorld(), (int) x, (int) y, (int) z);
                 if (!location.getBlock().getType().equals(Material.AIR)) {
-                    location.getBlock().setType(replaceBlock);
+                    location.getBlock().setType(replaceBlock, false);
                     locationList.add(location);
                 }
                 y++;
@@ -122,6 +127,8 @@ public class RemoveBlockService {
     }
 
     public void removeEastBlocks() {
+        plugin.getLogger().info("eastBlocks");
+        setLocationstoRemove();
         //West
         x = lowestNorthWestBlock2.getX();
         z = lowestNorthWestBlock2.getZ();
@@ -130,7 +137,7 @@ public class RemoveBlockService {
             while (y < worldHeight) {
                 Location location = new Location(plugin.getWorld(), (int) x, (int) y, (int) z);
                 if (!location.getBlock().getType().equals(Material.AIR)) {
-                    location.getBlock().setType(replaceBlock);
+                    location.getBlock().setType(replaceBlock, false);
                     locationList.add(location);
                 }
                 y++;

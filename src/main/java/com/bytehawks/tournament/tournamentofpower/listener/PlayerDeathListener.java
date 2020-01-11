@@ -4,6 +4,7 @@ import com.bytehawks.tournament.tournamentofpower.TournamentOfPower;
 import com.destroystokyo.paper.Title;
 import org.bukkit.ChatColor;
 import org.bukkit.Sound;
+import org.bukkit.entity.Firework;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -22,10 +23,18 @@ public class PlayerDeathListener implements Listener {
     @EventHandler
     public void onPlayerdeath(PlayerDeathEvent event) {
         Player player = event.getEntity();
+        player.getWorld().spawn(player.getLocation(), Firework.class);
+        player.getWorld().spawn(player.getLocation(), Firework.class);
+        player.getWorld().spawn(player.getLocation(), Firework.class);
+        player.getWorld().spawn(player.getLocation(), Firework.class);
+        player.getWorld().spawn(player.getLocation(), Firework.class);
+        player.getWorld().spawn(player.getLocation(), Firework.class);
+        player.getWorld().spawn(player.getLocation(), Firework.class);
+        player.getWorld().spawn(player.getLocation(), Firework.class);
+        player.getWorld().spawn(player.getLocation(), Firework.class);
+        player.getWorld().spawn(player.getLocation(), Firework.class);
         List<String> deadPlayers = plugin.getConfig().getStringList("isDead");
         deadPlayers.add(player.getUniqueId().toString());
-        System.out.println(deadPlayers.size());
-        System.out.println(player.getUniqueId().toString());
         plugin.getConfig().set("isDead", deadPlayers);
         Title title = Title.builder().title(ChatColor.BOLD + player.getDisplayName() + ChatColor.RESET + "ist ausgeschieden!").fadeIn(10).fadeOut(10).stay(20).build();
         plugin.getServer().getOnlinePlayers().forEach(p -> sendDeathMessageToAllOtherPlayers(p, title));

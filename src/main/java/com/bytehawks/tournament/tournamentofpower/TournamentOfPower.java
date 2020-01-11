@@ -29,15 +29,6 @@ public final class TournamentOfPower extends JavaPlugin {
 
     public TournamentOfPower() {
         instance = this;
-
-    }
-
-    public static TournamentOfPower getInstance() {
-        return instance;
-    }
-
-    public static Logger getLog() {
-        return log;
     }
 
     @Override
@@ -102,4 +93,13 @@ public final class TournamentOfPower extends JavaPlugin {
     public void setStarted(boolean started) {
         this.started = started;
     }
+
+    public static TournamentOfPower getInstance() {
+        return instance;
+    }
+
+    public static Logger getLog() {
+        return log;
+    }
+
 }

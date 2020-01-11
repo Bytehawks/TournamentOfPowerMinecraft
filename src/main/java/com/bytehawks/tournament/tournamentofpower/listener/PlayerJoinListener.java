@@ -38,7 +38,7 @@ public class PlayerJoinListener implements Listener {
 
         List<String> deadPlayers = plugin.getConfig().getStringList("isDead");
 
-        if (!plugin.isStarted() && deadPlayers.contains(player.getUniqueId().toString())) {
+        if (!plugin.isStarted() && !deadPlayers.contains(player.getUniqueId().toString())) {
             westBlock.setType(material);
             westUpBlock.setType(material);
             northBlock.setType(material);
